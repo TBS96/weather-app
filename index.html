@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prantik's Weather App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h2>Gool-Gool Weather</h2>
+    <div class="container">
+
+        <div class="search-parent">
+
+            <input type="text" id="city-input-area" placeholder="Enter city name...">
+
+            <button onclick="getWeather()">Get Weather</button>
+
+        </div>
+            
+        <div id="progress-container">
+            <progress value="50" max="100"></progress>
+        </div>
+
+        <div id="showWeather">Type a city name or zipcode above to get current weather</div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
