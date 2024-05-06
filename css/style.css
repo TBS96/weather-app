@@ -27,7 +27,6 @@ h2{
     border-radius: 50px;
     
     position: relative;
-    font-size: 120px;
     font-weight: bolder;
     font-size: 80px;
     font-family: consolas;
@@ -185,22 +184,48 @@ progress::-webkit-progress-bar{
         color: rgb(71, 105, 255);
     }
 
+    h2{
+        animation-timing-function: ease;
+        position: sticky;
+        top: 0;
+        box-shadow: 10px 10px 10px 5px rgba(0, 255, 21, 0.555);
+    }
+
     #city-input-area{
         border: none;
+        width: 300px;
+        height: 80px;
+        border-radius: 5px;
+        font-size: 20px;
         padding: 10px 20px;
+        background-color: #83654ccc;
+        border-radius: 20px;
         box-shadow: -5px -5px 45px 5px blue;
     }
 
+    #city-input-area::placeholder{
+        color: rgba(72, 8, 248, 0.747);
+        text-wrap:wrap;
+    }
+
     button{
-        background-image: linear-gradient(rgb(217, 233, 225),rgb(10, 141, 32),rgba(247, 1, 1, 0.753));
+        background-image: linear-gradient(rgb(217, 233, 225),rgb(10, 141, 32),rgba(247, 202, 1, 0.753));
         background-repeat: repeat;
 
-        padding: 8px 106px;
-        font-size: 14px;
-        font-weight: bold;
+        font-size: 20px;
         color: wheat;
-        margin: 13px;
+        margin-top: 20px;
         display: block;
+        transition: 0.5s;
+    }
+
+    button:hover{
+        color: rgb(0, 0, 0);
+        background: linear-gradient(to bottom,blue,blueviolet,aqua);
+        transform: rotatey(5deg);
+        cursor: pointer;
+        /* opacity: 0; */
+        box-shadow: 10px 10px 100px 25px red;
     }
 }
 
