@@ -208,6 +208,22 @@ progress::-webkit-progress-bar{
         text-wrap:wrap;
     }
 
+    #clear-label{
+        border: none;
+        background: none;
+        color: red;
+        font-size: 40px;
+        cursor: pointer;
+        /* margin-top: -85px; Adjust spacing as needed */
+        position: relative;
+        top: -280px;
+        right: -170px;
+    }
+    
+    #clear-label:hover{
+        color: darkred;
+    }
+
     button{
         background-image: linear-gradient(rgb(217, 233, 225),rgb(10, 141, 32),rgba(247, 202, 1, 0.753));
         background-repeat: repeat;
