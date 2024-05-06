@@ -87,6 +87,22 @@ h2:hover{
     box-shadow: 5px 5px 45px 5px yellow;
 }
 
+#clear-label{
+    border: none;
+    background: none;
+    color: red;
+    font-size: 40px;
+    cursor: pointer;
+    /* margin-top: -85px; Adjust spacing as needed */
+    position: relative;
+    top: -200px;
+    right: -270px;
+}
+
+#clear-label:hover{
+    color: darkred;
+}
+
 button{
     display: block;
     margin: auto;

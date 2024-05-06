@@ -1,3 +1,11 @@
+document.getElementById('clear-checkbox').addEventListener('change', () => {
+    if(document.getElementById('clear-checkbox').checked)
+    {
+        document.getElementById('city-input-area').value = ''; // Clear input field
+        document.getElementById('clear-checkbox').checked = false; // Uncheck the checkbox
+    }
+});
+
 const getWeather = () => {
     const city = document.getElementById('city-input-area').value;
     const apiKey = 'a802b4f26fbb9ee6933667bbec313393';

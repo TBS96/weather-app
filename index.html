@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prantik's Weather App</title>
+
+    <!-- favicons link -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/9396e58a3c.js" crossorigin="anonymous"></script>
+
+    <!-- Raw CSS Link -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,9 +24,14 @@
 
         <div class="search-parent">
 
-            <input type="text" id="city-input-area" placeholder="Enter city name...">
+            <input type="text" id="city-input-area" placeholder="Enter city name or area ZIP Code...">
+            
+            <label for="clear-checkbox" id="clear-label"><i class="fa-solid fa-xmark"></i></label>
+            
+            <input type="checkbox" id="clear-checkbox" style="display: none;">
 
-            <button onclick="getWeather()">Get Weather</button>
+
+            <button onclick="getWeather()">C'mon!! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hit ME!</button>
 
         </div>
             
@@ -27,7 +43,7 @@
 
     </div>
 
-
+    <!-- Raw JS Link -->
     <script src="js/script.js"></script>
 </body>
 </html>
