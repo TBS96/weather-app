@@ -173,6 +173,37 @@ progress::-webkit-progress-bar{
     background-color: yellowgreen;
 } */
 
+footer > p{
+    margin: 50px 20px;
+    text-align: center;
+}
+
+footer > p > i{
+    color: red;
+    transition: 0.5s;
+}
+
+footer > p > i:hover{
+    color: yellow;
+    background: linear-gradient(rgba(207, 71, 17, 0.575),rgba(0, 128, 0, 0.644),rgba(55, 55, 223, 0.747)),linear-gradient(rgba(16, 16, 209, 0.658),rgba(0, 128, 0, 0.644),rgba(207, 71, 17, 0.575));
+    padding: 5px;
+    border-radius: 50%;
+    transform: perspective(100px) translate3d(0px,-10px,50px);
+    cursor: not-allowed;
+}
+footer > p > a{
+    text-decoration: none;
+}
+
+footer > p > a > span{
+    color: white;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+footer > p > a > span:hover{
+    font-size: 35px;
+}
 
 
 /* Responsive code starts */
