@@ -231,7 +231,7 @@ h5::after{
     box-shadow: 0px 0px 45px 5px rgba(24, 24, 27, 0.274);
 
     opacity: 0;
-    transform: translateX(100rem);
+    transform: translateX(5rem);
     animation: fadeInUp 500ms ease calc(var(--typeWriterSpeed) + .5s) forwards;
 }
 
