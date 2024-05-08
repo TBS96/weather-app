@@ -20,7 +20,7 @@ const getWeather = () => {
 
 
     const progressBar = document.querySelector('progress');
-    progressBar.style.display = 'block';
+    progressBar.style.display = 'none';
     progressBar.value = 0;
 
     fetch(apiUrl)
@@ -33,7 +33,7 @@ const getWeather = () => {
         return response.json();
     })
     .then(data => {
-        progressBar.style.display = 'none';
+        progressBar.style.display = 'block';
         progressBar.value = 0;
 
         console.log(data);
@@ -57,19 +57,49 @@ const getWeather = () => {
         const sunrise = data.sys.sunrise;
         const sunset = data.sys.sunset;
 
+        // Get weather icon class based on weather condition
+        let weatherIconClass;
+        switch (description.toLowerCase()){
+            case 'clear':
+                weatherIconClass = 'fa-solid fa-sun fa-fade'; // Use sunny icon
+                break;
+            case 'clouds':
+                weatherIconClass = 'fa-solid fa-cloud fa-fade';
+                break;
+            case 'thunderstorm':
+                weatherIconClass = 'fa-solid fa-cloud-bolt fa-fade'; // Use thunderstorm icon
+                break;
+            case 'wind':
+                weatherIconClass = 'fa-solid fa-wind fa-fade'; // Use windy icon
+                break;
+            case 'rain':
+                weatherIconClass = 'fa-solid fa-cloud-rain fa-fade';
+                break;
+            case 'snow':
+                weatherIconClass = 'fa-solid fa-snowflake fa-fade';
+                break;
+            case 'haze':
+                weatherIconClass = 'fa-solid fa-bars fa-fade';
+                break;
+            default:
+                weatherIconClass = 'fa-solid fa-question fa-fade'; // Default icon for unknown weather condition
+        }
+
+
         displayWeatherDiv.innerHTML = `
         <h2>${cityName}, <small>${countryName}</small></h2>
-        <p>Description: ${description}</p>
+        <i class="${weatherIconClass}" style="font-size: 50px;"></i>
+        <p>${description}</p>
         <h1 style="font-size:100px"> ${temperature} &#8451 </h1>
         <p>Feels Like: ${tempFeelsLike} &#8451</p>
         <p>High: ${tempMax} &#8451</p>
         <p>Low: ${tempMin} &#8451</p>
         <p>Humidity: ${humidity} &#37;</p>
         <p>Pressure: ${pressure} mBar</p>
-        <p>Wind Speed: ${windSpeed} km/h</p>
+        <p>Wind Speed: ${windSpeed} km/h <i class="fa-solid fa-wind"></i></p>
         <p>Latitude: ${latitude} &degN</p>
         <p>Longitude: ${longitude} &degE</p>
-        <p>Visibility: ${(visibility/1000)} km</p>
+        <p>Visibility: ${(visibility/1000)} km <i class="fa-solid fa-eye fa-spin" style="font-size: 20px;"></i></p>
         `;
     })
     .catch(error => {
