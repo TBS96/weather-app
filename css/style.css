@@ -232,7 +232,7 @@ h5::after{
 
     opacity: 0;
     transform: translateX(100rem);
-    animation: fadeInUp 500ms ease calc(var(--typeWriterSpeed) + 1.5s) forwards;
+    animation: fadeInUp 500ms ease calc(var(--typeWriterSpeed) + .5s) forwards;
 }
 
 @keyframes fadeInUp{
