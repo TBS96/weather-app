@@ -6,20 +6,6 @@
     /* font-family: consolas; */
 }
 
-body{
-    background-color: #121212;
-    color: white;
-}
-
-@keyframes forGoolGool{
-    0%{
-        left: -20px;
-    }
-    100%{
-        left: 20px;
-    }
-}
-
 .h2-heading{
     width: 500px;
     background-image: linear-gradient(rgb(217, 233, 225),rgb(10, 141, 32),rgba(247, 1, 1, 0.753));
@@ -155,6 +141,75 @@ progress{
     margin-bottom: 20px;
 }
 
+
+:root{
+    --bg-colorBlack: hsl(0, 0%, 0%);
+    --bg-colorWhite: rgb(255, 255, 255);
+    --bg-colorGreen: rgba(5, 83, 18, 0.555);
+    --typeWriterSpeed: 8s;
+}
+
+body{
+    background: var(--bg-colorBlack);
+    color: white;
+}
+
+h5{
+    font-size: 20px;
+    font-family: monospace;
+    position: relative;
+}
+
+h5::before, h5::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+h5::before{
+    background-color: var(--bg-colorBlack);
+    animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards;
+}
+
+h5::after{
+    width: 0.125em;
+    background: rgb(255, 255, 255);
+    animation:
+    typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards,
+    blinking 750ms steps(var(--totalCharacters)) infinite;
+}
+
+@keyframes typeWriter{
+    to{
+        left: 100%;
+    }
+}
+
+@keyframes blinking{
+    to{
+        background: transparent;
+    }
+}
+
+@keyframes forGoolGool{
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 20px;
+    }
+}
+
+.typeAnimation{
+    padding: 10px;
+    /* border: 2px solid; */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
 #showWeather{
     background-color: rgba(255, 0, 0, 0);
     border-radius: 30px;
@@ -163,7 +218,7 @@ progress{
     /* opacity: 0; */
     /* display: none; */
     text-align: center;
-    box-shadow: 5px 5px 45px 5px rgba(186, 172, 235, 0.274);
+    box-shadow: 0px 0px 45px 5px rgba(24, 24, 27, 0.274);
 }
 
 progress::-webkit-progress-bar{
@@ -257,10 +312,29 @@ footer > p > a > span:hover{
         margin: 0 auto;
     }
 
+    :root{
+        --bg-colorGreen: #799F7F;
+    }
+    
     body{
-        background-color: rgba(5, 83, 18, 0.555);
+        background-color: var(--bg-colorGreen);
         color: rgb(44, 40, 39);
     }
+
+    .typeAnimation{
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    h5{
+        font-size: 16px;
+    }
+    
+    h5::before{
+        background-color: var(--bg-colorGreen);
+        animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards;
+    }
+
 
     .h2-heading{
         animation-timing-function: ease;
@@ -325,12 +399,24 @@ footer > p > a > span:hover{
     }
 }
 
+
 /* For medium screens (768px - 992px) */
 @media only screen and (min-width: 769px) and (max-width: 992px){
+    :root{
+        --bg-colorGrey: #808080;
+    }
+    
     body{
-        background-color: gray;
+        background-color: var(--bg-colorGrey);
         color: yellow;
     }
+    
+    h5::before{
+        background-color: var(--bg-colorGrey);
+        animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards;
+    }
+
+    
 
     #city-input-area{
         border: none;
@@ -344,6 +430,7 @@ footer > p > a > span:hover{
         margin: 5px;
     }
 }
+
 
 /* For large screens (992px and above) */
 @media only screen and (min-width: 993px){

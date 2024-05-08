@@ -1,3 +1,9 @@
+const h5Tag = document.querySelector('h5');
+const totalCharacters = h5Tag.textContent.length;
+const rootElement = document.documentElement;
+rootElement.style.setProperty('--totalCharacters', totalCharacters);
+
+
 document.getElementById('clear-checkbox').addEventListener('change', () => {
     if(document.getElementById('clear-checkbox').checked)
     {
