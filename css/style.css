@@ -156,7 +156,7 @@ progress::-webkit-progress-bar{
     --bg-colorBlack: hsl(0, 0%, 0%);
     --bg-colorWhite: rgb(255, 255, 255);
     --bg-colorGreen: rgba(5, 83, 18, 0.555);
-    --typeWriterSpeed: 8s;
+    --typeWriterSpeed: 15s;
 }
 
 body{
@@ -181,19 +181,19 @@ h5::before, h5::after{
 
 h5::before{
     background-color: var(--bg-colorBlack);
-    animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards;
+    animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s alternate infinite;
 }
 
 h5::after{
     width: 0.125em;
     background: rgb(255, 255, 255);
     animation:
-    typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards,
+    typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s alternate-reverse infinite,
     blinking 750ms steps(var(--totalCharacters)) infinite;
 }
 
 @keyframes typeWriter{
-    to{
+    50%{
         left: 100%;
     }
 }
@@ -232,7 +232,7 @@ h5::after{
 
     opacity: 0;
     transform: translateX(5rem);
-    animation: fadeInUp 500ms ease calc(var(--typeWriterSpeed) + .5s) forwards;
+    animation: fadeInUp 500ms ease 8s forwards;
 }
 
 @keyframes fadeInUp{
@@ -345,7 +345,8 @@ footer > p > a > span:hover{
     
     h5::before{
         background-color: var(--bg-colorGreen);
-        animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards;
+        /* animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards; */
+        animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s alternate infinite;
     }
 
 
@@ -426,7 +427,8 @@ footer > p > a > span:hover{
     
     h5::before{
         background-color: var(--bg-colorGrey);
-        animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards;
+        /* animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s forwards; */
+        animation: typeWriter var(--typeWriterSpeed) steps(var(--totalCharacters)) 1s alternate infinite;
     }
 
     
