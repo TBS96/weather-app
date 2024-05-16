@@ -67,10 +67,10 @@ const getWeather = () => {
                 weatherIconClass = 'fa-solid fa-cloud fa-fade';
                 break;
             case 'thunderstorm':
-                weatherIconClass = 'fa-solid fa-cloud-bolt fa-fade'; // Use thunderstorm icon
+                weatherIconClass = 'fa-solid fa-cloud-bolt fa-fade';
                 break;
             case 'wind':
-                weatherIconClass = 'fa-solid fa-wind fa-fade'; // Use windy icon
+                weatherIconClass = 'fa-solid fa-wind fa-fade';
                 break;
             case 'rain':
                 weatherIconClass = 'fa-solid fa-cloud-rain fa-fade';
@@ -81,8 +81,11 @@ const getWeather = () => {
             case 'haze':
                 weatherIconClass = 'fa-solid fa-bars fa-fade';
                 break;
+            case 'mist':
+                weatherIconClass = 'fa-solid fa-water fa-fade';
+                break;
             default:
-                weatherIconClass = 'fa-solid fa-question fa-fade'; // Default icon for unknown weather condition
+                weatherIconClass = 'fa-solid fa-question fa-fade';
         }
 
 
@@ -92,9 +95,9 @@ const getWeather = () => {
         <p>${description}</p>
         <h1 style="font-size:100px"> ${temperature} &#8451 </h1>
         <p>Feels Like: ${tempFeelsLike} &#8451</p>
-        <p>High: ${tempMax} &#8451</p>
-        <p>Low: ${tempMin} &#8451</p>
-        <p>Humidity: ${humidity} &#37;</p>
+        <p>High: ${tempMax} &#8451 <i class="fa-solid fa-temperature-arrow-up fa-fade" style="color: red"></i></p>
+        <p>Low: ${tempMin} &#8451 <i class="fa-solid fa-temperature-arrow-down fa-fade" style="color: rgb(101, 191, 226)"></i></p>
+        <p>Humidity: ${humidity} &#37; <i class="fa-solid fa-water" style="color: rgb(26, 184, 247)"></i></p>
         <p>Pressure: ${pressure} mBar</p>
         <p>Wind Speed: ${windSpeed} km/h <i class="fa-solid fa-wind"></i></p>
         <p>Latitude: ${latitude} &degN</p>
