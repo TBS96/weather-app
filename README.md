@@ -1,4 +1,4 @@
-# DOM Mini Project - 5
+# DOM Mini Project - 6
 
 ``` bash
 Weather App
