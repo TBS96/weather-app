@@ -1,3 +1,5 @@
-# Prantik's Weather App
+# DOM Mini Project - 5
 
-## src is currently wip.
+``` bash
+Weather App
+```
