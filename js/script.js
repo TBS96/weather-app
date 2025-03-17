@@ -25,18 +25,18 @@ const getWeather = () => {
 
     fetch(apiUrl)
     // .then(response => response.json())
-    .then(response => {
-        if(!response.ok)
+    .then(res => {
+        if(!res.ok)
             {
                 throw new Error('City Not Found!!');
             }
-        return response.json();
+        return res.json();
     })
     .then(data => {
         progressBar.style.display = 'block';
         progressBar.value = 0;
 
-        console.log(data);
+        // console.log(data);
 
         const displayWeatherDiv = document.getElementById('showWeather');
 
